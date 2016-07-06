@@ -18,12 +18,7 @@ RUN sed 's|#!/bin/bash|#!/bin/sh|' oltpbenchmark > mod.oltpbenchmark \
     && chmod +x oltpbenchmark \
     && chmod +x /start.sh
 
-ENV DBFQDN ${DBFQDN}
-ENV DBUSER ${DBUSER}
-ENV DBPASS ${DBPASS}
-ENV DBTYPE ${DBTYPE}
-ENV DBNAME ${DBNAME}
-ENV DBPORT ${DBPORT}
-ENV BENCH ${BENCH}
+ENV DBFQDN='' DBUSER='' DBPASS='' DBTYPE='' DBNAME='' DBPORT='' BENCH=''
+ENV CLEARBOOL='' CREATEBOOL='' EXECBOOL='' LOADBOOL=''
 
 ENTRYPOINT ["/start.sh"]
