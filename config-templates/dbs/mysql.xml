@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<parameters>
+	
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>com.mysql.jdbc.Driver</driver>
+    <DBUrl>jdbc:mysql://|FQDN|:|PORT|/|DB|</DBUrl>
+    
+    

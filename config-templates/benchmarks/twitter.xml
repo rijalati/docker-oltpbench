@@ -1,0 +1,31 @@
+
+
+    <isolation bench="twitter">TRANSACTION_SERIALIZABLE</isolation>
+          
+    <!-- Scalefactor in Twitter scales by *500 the number of users-->
+    <scalefactor bench="twitter">100</scalefactor>
+    
+    
+	<!-- Trace files for Twitter -->
+    <tracefile bench="twitter">config/traces/tweets.txt</tracefile>
+    <tracefile2 bench="twitter">config/traces/users.txt</tracefile2>
+    <base_ip bench="twitter">10.1.</base_ip>
+    
+    <!-- Twitter Procedures declaration -->
+    <transactiontypes bench="twitter">
+        <transactiontype>
+                <name>GetTweet</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetTweetsFromFollowing</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetFollowers</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetUserTweets</name>
+        </transactiontype>
+        <transactiontype>
+                <name>InsertTweet</name>
+        </transactiontype>
+    </transactiontypes>

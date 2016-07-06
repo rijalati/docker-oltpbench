@@ -1,0 +1,26 @@
+    
+    <!-- Scalefactor in SEATS scales by *1000 the number of customers-->
+    <scalefactor bench="seats">10</scalefactor>
+
+    <!-- SEATS Procedures declaration -->
+    <transactiontypes bench="seats">
+        <transactiontype>
+                <name>DeleteReservation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>FindFlights</name>
+        </transactiontype>
+        <transactiontype>
+                <name>FindOpenSeats</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewReservation</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateCustomer</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateReservation</name>
+        </transactiontype>
+    </transactiontypes>
+

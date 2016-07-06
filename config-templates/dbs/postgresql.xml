@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<parameters>
+
+	<!-- Connection details -->
+	<dbtype>postgres</dbtype>
+	<driver>org.postgresql.Driver</driver>
+	<DBUrl>jdbc:postgresql://|FQDN|:|PORT|/|DB|</DBUrl>
+

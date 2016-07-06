@@ -1,0 +1,24 @@
+    <isolation bench="resourcestresser">TRANSACTION_SERIALIZABLE</isolation>
+    
+    <!-- R/S Procedures declaration -->
+    <transactiontypes bench="resourcestresser">
+        <transactiontype>
+            <name>CPU1</name>
+        </transactiontype>
+        <transactiontype>
+            <name>CPU2</name>
+        </transactiontype>
+        <transactiontype>
+            <name>IO1</name>
+        </transactiontype>
+        <transactiontype>
+            <name>IO2</name>
+        </transactiontype>
+        <transactiontype>
+            <name>CONTENTION1</name>
+        </transactiontype>
+        <transactiontype>
+            <name>CONTENTION2</name>
+        </transactiontype>
+    </transactiontypes>
+

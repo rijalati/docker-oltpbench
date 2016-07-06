@@ -1,0 +1,26 @@
+<isolation bench="tpcc">TRANSACTION_SERIALIZABLE</isolation>
+
+    <!-- Scale factor is the number of warehouses in TPCC -->
+    <scalefactor bench="tpcc">10</scalefactor>
+
+
+
+    <!-- TPCC specific -->
+    <transactiontypes bench="tpcc">
+        <transactiontype>
+            <name>NewOrder</name>
+        </transactiontype>
+        <transactiontype>
+            <name>Payment</name>
+        </transactiontype>
+        <transactiontype>
+            <name>OrderStatus</name>
+        </transactiontype>
+        <transactiontype>
+            <name>Delivery</name>
+        </transactiontype>
+        <transactiontype>
+            <name>StockLevel</name>
+        </transactiontype>
+    </transactiontypes>
+

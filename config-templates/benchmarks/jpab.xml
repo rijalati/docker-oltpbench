@@ -1,0 +1,25 @@
+    
+    <!-- Number of Initial Objects -->
+    <scalefactor bench="jpab">1000000</scalefactor>
+    
+    <!-- Hibernate configuration -->
+    <persistence-unit bench="jpab">Hibernate-MySQL-server</persistence-unit>
+    
+    <!-- Type of Objects -->
+    <testClass  bench="jpab">BasicTest</testClass>
+      
+    <!-- JPAB Procedures Declaration -->
+    <transactiontypes bench="jpab">
+        <transactiontype>
+                <name>Persist</name>
+        </transactiontype>
+        <transactiontype>
+                <name>Retrieve</name>
+        </transactiontype>
+        <transactiontype>
+                <name>Update</name>
+        </transactiontype>
+        <transactiontype>
+                <name>Delete</name>
+        </transactiontype>
+    </transactiontypes>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<parameters>
+
+    <!-- Connection details -->
+    <dbtype>mysql</dbtype>
+    <driver>org.mariadb.jdbc.Driver</driver>
+    <DBUrl>jdbc:mariadb://|FQDN|:|PORT|/|DB|</DBUrl>
+
+

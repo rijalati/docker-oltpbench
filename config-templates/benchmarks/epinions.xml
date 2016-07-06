@@ -1,0 +1,34 @@
+    
+    <!-- Scalefactor in Epinions scales by *2000 the number of users-->
+    <scalefactor bench="epinions">100</scalefactor>
+
+    <!-- Epinions Procedures Declaration -->
+    <transactiontypes bench="epinions">
+        <transactiontype>
+            <name>GetReviewItemById</name>
+        </transactiontype>
+        <transactiontype>
+            <name>GetReviewsByUser</name>
+        </transactiontype>
+        <transactiontype>
+            <name>GetAverageRatingByTrustedUser</name>
+        </transactiontype>
+        <transactiontype>
+            <name>GetItemAverageRating</name>
+        </transactiontype>
+        <transactiontype>
+            <name>GetItemReviewsByTrustedUser</name>
+        </transactiontype>
+        <transactiontype>
+            <name>UpdateUserName</name>
+        </transactiontype>
+        <transactiontype>
+            <name>UpdateItemTitle</name>
+        </transactiontype>
+        <transactiontype>
+            <name>UpdateReviewRating</name>
+        </transactiontype>
+        <transactiontype>
+            <name>UpdateTrustRating</name>
+        </transactiontype>
+    </transactiontypes>	

@@ -1,0 +1,39 @@
+
+	<isolation bench="linkbench">TRANSACTION_REPEATABLE_READ</isolation>
+
+	<!-- Configuration file of LinkBench -->
+	<configfile bench="linkbench">config/extras/LinkBenchConfiguration.properties</configfile>
+
+	<!-- LinkBench Procedures Declaration -->
+	<transactiontypes bench="linkbench">
+		<transactiontype>
+			<name>AddLink</name>
+		</transactiontype>
+		<transactiontype>
+			<name>DeleteLink</name>
+		</transactiontype>
+		<transactiontype>
+			<name>UpdateLink</name>
+		</transactiontype>
+		<transactiontype>
+			<name>CountLink</name>
+		</transactiontype>
+		<transactiontype>
+			<name>GetLink</name>
+		</transactiontype>
+		<transactiontype>
+			<name>GetLinkList</name>
+		</transactiontype>
+		<transactiontype>
+			<name>GetNode</name>
+		</transactiontype>
+		<transactiontype>
+			<name>AddNode</name>
+		</transactiontype>
+		<transactiontype>
+			<name>UpdateNode</name>
+		</transactiontype>
+		<transactiontype>
+			<name>DeleteNode</name>
+		</transactiontype>
+	</transactiontypes>

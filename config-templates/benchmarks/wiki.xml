@@ -1,0 +1,29 @@
+    <isolation bench="wiki">TRANSACTION_SERIALIZABLE</isolation>
+    
+    <!-- Scale factor is the number of wikipages *1000 -->
+    <scalefactor bench="wiki">100</scalefactor>
+    
+    <!-- Wikipedia Trace Options -->
+    <tracefile bench="wiki">config/traces/wikipedia-100k.trace</tracefile>
+    <traceOut bench="wiki">10</traceOut>
+    <base_ip bench="wiki">10.1.</base_ip>
+    
+    <!-- Wikipedia Procedures Declaration -->
+	<transactiontypes bench="wiki">
+        <transactiontype>
+                <name>AddWatchList</name>
+        </transactiontype>
+        <transactiontype>
+                <name>RemoveWatchList</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdatePage</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetPageAnonymous</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetPageAuthenticated</name>
+        </transactiontype>
+    </transactiontypes>
+

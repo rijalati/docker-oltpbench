@@ -1,0 +1,16 @@
+
+
+    <isolation bench="sibench">TRANSACTION_SERIALIZABLE</isolation>
+    
+    <scalefactor bench="sibench">100</scalefactor>
+    
+    <!-- SIBENCH Procedures declaration -->
+    <transactiontypes bench="sibench">
+        <transactiontype>
+                <name>MinRecord</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateRecord</name>
+        </transactiontype>
+    </transactiontypes>
+

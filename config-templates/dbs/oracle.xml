@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<parameters>
+  <!-- General Workload configuration -->
+  <dbtype>oracle</dbtype>
+  <driver>oracle.jdbc.driver.OracleDriver</driver>
+  <DBUrl>jdbc:oracle:thin:@|FQDN|:|PORT|:|DB|</DBUrl>
+  <DBName>|DB|</DBName>
+

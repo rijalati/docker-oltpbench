@@ -1,0 +1,36 @@
+
+    <isolation bench="auctionmark">TRANSACTION_SERIALIZABLE</isolation>
+
+    <!-- Scalefactor in AuctionMark scales by *1000 the number of customers-->
+    <scalefactor bench="auctionmark">10</scalefactor>
+
+    <!-- AuctionMark Procedures declaration -->
+    <transactiontypes bench="auctionmark">
+        <transactiontype>
+                <name>GetItem</name>
+        </transactiontype>
+        <transactiontype>
+                <name>GetUserInfo</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewBid</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewComment</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewCommentResponse</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewFeedback</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewItem</name>
+        </transactiontype>
+        <transactiontype>
+                <name>NewPurchase</name>
+        </transactiontype>
+        <transactiontype>
+                <name>UpdateItem</name>
+        </transactiontype>
+    </transactiontypes>
