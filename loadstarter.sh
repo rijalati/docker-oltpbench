@@ -68,15 +68,17 @@ while getopts :u:p:t:d:n:f:b: OPT; do
         b)
             BENCH="${OPTARG}"
             ;;
-        *)
-            printf "\nOption -${BOLD}%s${NORM} not allowed.\n\n" "${OPTARG}"
+	* )
+	    printf "\nOption -${BOLD}%s${NORM} not allowed.\n\n" "${OPTARG}"
 	    usage
-            ;;
+	    ;;
     esac
 done
 
 docker run -d --restart unless-stopped -e DBUSER="${DBUSER}" \
        -e DBPASS="${DBPASS}" -e DBTYPE="${DBTYPE}" -e DBNAME="${DBNAME}" \
        -e DBPORT="${DBPORT}" -e DBFQDN="${DBFQDN}" -e BENCH="${BENCH}" \
+       -e CLEARBOOL="${CLEARBOOL}" -e CREATEBOOL="${CREATEBOOL}" \
+       -e EXECBOOL="${EXECBOOL}" -e LOADBOOL="${LOADBOOL}" \
        --entrypoint /start.sh --name ${DBFQDN} rijalati/oltpbench
 

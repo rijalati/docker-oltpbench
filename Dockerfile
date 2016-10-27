@@ -1,7 +1,8 @@
 FROM rijalati/alpine-zulu-jdk8
 MAINTAINER rijalati@gmail.com
 
-RUN apk add git tar mksh && git clone https://github.com/oltpbenchmark/oltpbench.git
+RUN apk update --no-cache \
+    && apk add git tar mksh && git clone https://github.com/oltpbenchmark/oltpbench.git
 WORKDIR /oltpbench
 
 RUN ant
