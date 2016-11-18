@@ -1,4 +1,4 @@
-FROM rijalati/alpine-zulu-jdk8
+FROM rijalati/alpine-zulu-jdk8:latest
 MAINTAINER rijalati@gmail.com
 
 RUN apk update --no-cache \
