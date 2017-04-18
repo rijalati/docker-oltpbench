@@ -7,10 +7,10 @@ WORKDIR /oltpbench
 
 RUN ant
 RUN mkdir /oltpbench/templates /config-templates
-COPY my-templates/ /oltpbench/templates/
-COPY config-templates/ /config-templates/
+COPY my-templates/ /oltpbench/templates
+COPY config-templates/ /oltpbench/config-templates/
 COPY start.sh /start.sh
-COPY bench-confgen.sh /bench-confgen.sh
+COPY bench-confgen.sh bench-confgen.sh
 COPY *.jar /oltpbench/lib/
 COPY ntlmauth.dll /oltpbench/lib/
 

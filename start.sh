@@ -7,7 +7,7 @@ eval target="/oltpbench/templates"
 if [[ -z ${DBUSER} || -z ${DBPASS} || -z ${DBTYPE} || -z ${DBNAME} || -z ${DBPORT} ]]; then
     echo "Skipping config generation...\n"
 else
-    /bench-confgen.sh -f "${DBFQDN}" -u "${DBUSER}" \
+    /oltpbench/bench-confgen.sh -f "${DBFQDN}" -u "${DBUSER}" \
         -p "${DBPASS}" -t "${DBTYPE}" -d "${DBNAME}" \
         -n "${DBPORT}" -b "${BENCH}" -o "${target}"
 fi
