@@ -2,10 +2,10 @@ FROM rijalati/alpine-zulu-jdk8:latest
 MAINTAINER rijalati@gmail.com
 
 RUN apk update --no-cache \
-    && apk add git tar mksh && git clone https://github.com/oltpbenchmark/oltpbench.git
+    && apk add git tar mksh && git clone https://github.com/rijalati/oltpbench.git
 WORKDIR /oltpbench
 
-RUN ant
+RUN cd /oltpbench && git checkout errorprone && ant
 RUN mkdir /oltpbench/templates /config-templates
 COPY my-templates/ /oltpbench/templates
 COPY config-templates/ /oltpbench/config-templates/
