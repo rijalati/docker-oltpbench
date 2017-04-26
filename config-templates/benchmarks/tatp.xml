@@ -1,7 +1,7 @@
     <isolation bench="tatp">TRANSACTION_SERIALIZABLE</isolation>
         
     <!-- Scalefactor increases the number of subscribers -->
-    <scalefactor bench="tatp">100</scalefactor>
+    <scalefactor bench="tatp">10000</scalefactor>
     
 	<!-- Twitter Procedures declaration -->
     <transactiontypes bench="tatp">
