@@ -1,6 +1,6 @@
     <isolation bench="voter">TRANSACTION_SERIALIZABLE</isolation>
     
-    <scalefactor bench="voter">10</scalefactor>
+    <scalefactor bench="voter">100000</scalefactor>
  
 
     <!-- Voter Procedures declaration -->
