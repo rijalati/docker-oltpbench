@@ -2,7 +2,7 @@
 <parameters>
   <!-- General Workload configuration -->
   <dbtype>oracle</dbtype>
-  <driver>oracle.jdbc.driver.OracleDriver</driver>
+  <driver>oracle.jdbc</driver>
   <DBUrl>jdbc:oracle:thin:@|FQDN|:|PORT|:|DB|</DBUrl>
   <DBName>|DB|</DBName>
 
