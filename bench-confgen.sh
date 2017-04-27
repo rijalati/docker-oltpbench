@@ -190,16 +190,17 @@ function main
                 ;;
             t )
                 dbtype="${OPTARG}"
-                ;;
-            d )
-                database="${OPTARG}"
                 typeset -u DB
-                DB="${database}" # up cased
+                DB="${dbtype}" # up cased
                 if [[ ${DB} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
                 else
                     :
                 fi
+
+                ;;
+            d )
+                typeset -u database="${OPTARG}"
                 ;;
             n )
                 port="${OPTARG}"
