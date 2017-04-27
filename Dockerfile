@@ -14,8 +14,7 @@ COPY bench-confgen.sh bench-confgen.sh
 COPY ojdbc-get.sh ojdbc-get.sh
 COPY ntlmauth.dll /oltpbench/lib/
 
-RUN chmod +x oltpbenchmark \
-    && chmod +x /start.sh
+RUN chmod +x oltpbenchmark ojdbc-get.sh /start.sh
 
 ENV DBFQDN='' DBUSER='' DBPASS='' DBTYPE='' DBNAME='' DBPORT='' BENCH=''
 ENV CLEARBOOL='' CREATEBOOL='' EXECBOOL='' LOADBOOL=''

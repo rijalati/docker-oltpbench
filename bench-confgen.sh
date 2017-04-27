@@ -189,8 +189,10 @@ function main
                 pass="${OPTARG}"
                 ;;
             t )
-                typeset -u dbtype="${OPTARG}"
-                if [[ ${dbtype} == "ORACLE" ]]; then
+                dbtype="${OPTARG}"
+		typeset -u typechk
+		typechk="${dbtype}"
+                if [[ ${typechk} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
                 else
                     :

@@ -2,7 +2,7 @@
 
 URL="http://download.oracle.com/otn/utilities_drivers/jdbc/122010/ojdbc8.jar"
 
-cd /oltpbench/libs || exit 2
+cd lib || exit 2
 
 print 'By downloading the Oracle Database 12.2.0.1 JDBC Driver you are
 accepting the OTN License Agreement.
