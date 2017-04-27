@@ -1,6 +1,6 @@
 #!/usr/bin/env mksh
 
-set -e
+set -vex
 
 eval target="/oltpbench/templates"
 

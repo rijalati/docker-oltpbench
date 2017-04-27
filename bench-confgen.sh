@@ -193,7 +193,8 @@ function main
                 ;;
             d )
                 database="${OPTARG}"
-                typeset -u DB="${database}" # up cased
+                typeset -u DB
+                DB="${database}" # up cased
                 if [[ ${DB} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
                 else
