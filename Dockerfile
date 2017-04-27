@@ -11,6 +11,7 @@ COPY my-templates/ /oltpbench/templates
 COPY config-templates/ /oltpbench/config-templates/
 COPY start.sh /start.sh
 COPY bench-confgen.sh bench-confgen.sh
+COPY ojdbc-get.sh ojdbc-get.sh
 COPY ntlmauth.dll /oltpbench/lib/
 
 RUN chmod +x oltpbenchmark \
