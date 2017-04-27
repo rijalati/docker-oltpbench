@@ -184,7 +184,7 @@ function main
                 ;;
             u )
                 user="${OPTARG}"
-                ;;
+                ;;``
             p )
                 pass="${OPTARG}"
                 ;;
@@ -193,6 +193,12 @@ function main
                 ;;
             d )
                 database="${OPTARG}"
+                typeset -u DB="${database}" # up cased
+                if [[ ${DB} == "ORACLE" ]]; then
+                    ./ojdbc-get.sh
+                else
+                    :
+                fi
                 ;;
             n )
                 port="${OPTARG}"
