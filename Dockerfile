@@ -11,7 +11,6 @@ COPY my-templates/ /oltpbench/templates
 COPY config-templates/ /oltpbench/config-templates/
 COPY start.sh /start.sh
 COPY bench-confgen.sh bench-confgen.sh
-COPY *.jar /oltpbench/lib/
 COPY ntlmauth.dll /oltpbench/lib/
 
 RUN sed 's|#!/bin/bash|#!/bin/sh|' oltpbenchmark > mod.oltpbenchmark \
