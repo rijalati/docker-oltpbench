@@ -189,10 +189,8 @@ function main
                 pass="${OPTARG}"
                 ;;
             t )
-                dbtype="${OPTARG}"
-                typeset -u DB
-                DB="${dbtype}" # up cased
-                if [[ ${DB} == "ORACLE" ]]; then
+                typeset -u dbtype="${OPTARG}"
+                if [[ ${dbtype} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
                 else
                     :
@@ -200,7 +198,7 @@ function main
 
                 ;;
             d )
-                typeset -u database="${OPTARG}"
+                database="${OPTARG}"
                 ;;
             n )
                 port="${OPTARG}"
