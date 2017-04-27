@@ -1,6 +1,6 @@
     
     <!-- Scalefactor in SEATS scales by *1000 the number of customers-->
-    <scalefactor bench="seats">10</scalefactor>
+    <scalefactor bench="seats">1000</scalefactor>
 
     <!-- SEATS Procedures declaration -->
     <transactiontypes bench="seats">

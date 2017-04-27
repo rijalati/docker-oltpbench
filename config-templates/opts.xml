@@ -25,9 +25,9 @@
       <weights bench="jpab">25,25,25,25</weights>
       <weights bench="linkbench">8.9886601,2.9907664,8.0122125,4.8863567,0.5261142,50.7119145,12.9326683,2.5732789,7.366437,1.0115914</weights>
       <weights bench="resourcestresser">16.66,16.66,16.66,16.66,16.66,16.7</weights>
-      <weights bench="seats">10, 10, 35, 20, 10, 15</weights>
+      <weights bench="seats">15, 10, 20, 25, 15, 15</weights>
       <weights bench="sibench">50,50</weights>
-      <weights bench="tatp">2, 35, 10, 35, 2, 14, 2</weights>
+      <weights bench="tatp">7, 20, 10, 35, 12, 10, 6</weights>
       <weights bench="twitter">0.07,0.07,7.6725,91.2656,0.9219</weights>
       <weights bench="voter">100</weights>
       <weights bench="wiki">0.07,0.07,7.6725,91.2656,0.9219</weights>
