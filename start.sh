@@ -4,7 +4,7 @@ set -vex
 
 eval target="/oltpbench/templates"
 
-if [[ -z ${DBUSER} || -z ${DBPASS} || -z ${DBTYPE} || -z ${DBNAME} || -z ${DBPORT} ]]; then
+if [[ -z ${DBUSER} && -z ${DBPASS} && -z ${DBTYPE} && -z ${DBNAME} && -z ${DBPORT} ]]; then
     echo "Skipping config generation...\n"
 else
     /oltpbench/bench-confgen.sh -f "${DBFQDN}" -u "${DBUSER}" \
