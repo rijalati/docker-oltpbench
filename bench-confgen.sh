@@ -184,7 +184,7 @@ function main
                 ;;
             u )
                 user="${OPTARG}"
-                ;;``
+                ;;
             p )
                 pass="${OPTARG}"
                 ;;
