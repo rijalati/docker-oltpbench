@@ -20,7 +20,7 @@
       <weights bench="tpcc">45,43,4,4,4</weights>
       <weights bench="chbenchmark">3, 2, 3, 2 , 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,5, 5, 5, 5, 5, 5, 5</weights>
       <weights bench="tpch">1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0</weights>
-      <weights bench="auctionmark">45, 10, 20, 2, 1, 4, 10, 5,3</weights>
+      <weights bench="auctionmark">26, 10, 20, 7, 5, 4, 10, 10,8</weights>
       <weights bench="epinions">10,10,10,10,10,10,10,10,20</weights>
       <weights bench="jpab">25,25,25,25</weights>
       <weights bench="linkbench">8.9886601,2.9907664,8.0122125,4.8863567,0.5261142,50.7119145,12.9326683,2.5732789,7.366437,1.0115914</weights>
