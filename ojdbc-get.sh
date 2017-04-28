@@ -1,10 +1,10 @@
 #!/usr/bin/env mksh
 
-URL="http://download.oracle.com/otn/utilities_drivers/jdbc/122010/ojdbc8.jar"
-
+#URL="http://download.oracle.com/otn/utilities_drivers/jdbc/122010/ojdbc8.jar"
+URL="http://download.oracle.com/otn/utilities_drivers/jdbc/121020/ojdbc7.jar"
 cd lib || exit 2
 
-print 'By downloading the Oracle Database 12.2.0.1 JDBC Driver you are
+print 'By downloading the Oracle Database JDBC Driver you are
 accepting the OTN License Agreement.
 
 This is a link to a copy of the OTN License Agreement:
