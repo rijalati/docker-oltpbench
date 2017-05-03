@@ -3,7 +3,13 @@ Dockerfile and scripts to auto generate configs and run oltpbench against RDBMS 
 
 ## Getting Started
 
-This image is designed to streamline the configuration and running of the oltpbench benchmarking tool. To this end it comes with a some convenience scripts: bench-confgen.sh loadstarter.sh and ojdbc-get.sh, which use environment variables to automate the process of creating an XML config file to use with the tool, running the image directly, and setting up Oracle's maven repository and downloading their jdbc driver (Oracle Maven login required).
+This image is designed to streamline the configuration and running of the oltpbench benchmarking tool. To this end it comes with a some convenience scripts: 
+
+`bench-confgen.sh` -- generates configuration files for oltpbench using the templates under the `config-templates/` folder.
+
+`loadstarter.sh` -- for (more) easily running the image on docker directly, i.e. without a container orchestration tool like Rancher or Kubernetes.
+
+`ojdbc-get.sh` -- sets up Oracle's maven repository and downloads their jdbc drivers (Oracle Maven login required).
 
 
 ### Supported Environment Variables
