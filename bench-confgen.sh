@@ -194,7 +194,7 @@ function main
 		            typechk="${dbtype}"
                 if [[ ${typechk} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
-                    mvn clean
+                    #mvn clean
                     mvn package -P fixerrors
                 else
                     :
