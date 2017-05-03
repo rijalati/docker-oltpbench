@@ -10,18 +10,19 @@ This is a link to a copy of the OTN License Agreement:
 function mksettings_xml
 {
 
-    eval typeset -r MVN_EPASS="${ mvn -emp ${MVN_PASS}; }"
-    eval typeset -r ORACLEMVN_EPASS="${ mvn -ep ${ORACLEMVN_PASS}; }"
+    mkdir /root/.m2
 
-    cat > /tmp/settings-security.xml <<-EOF
-<settingssecurity>
+    cat > /root/.m2/settings-security.xml <<-EOF
+<settingsSecurity>
 <master>${MVN_EPASS}</master>
-</settingssecurity>
+</settingsSecurity>
 
 EOF
 
+    eval typeset -r MVN_EPASS="${ mvn -emp ${MVN_PASS}; }"
+    eval typeset -r ORACLEMVN_EPASS="${ mvn -ep ${ORACLEMVN_PASS}; }"
 
-    cat > /tmp/settings.xml <<-EOF
+    cat > /root/.m2/settings.xml <<-EOF
 <settings>
 <servers>
   <server>
@@ -92,8 +93,11 @@ EOF
 EOF
 )"
 
-    sed -i.bak1 "s/<!--ORACLE_CFG1-->/${ORACLE_CFG1}/g" /oltpbench/pom.xml
-    sed -i.bak2 "s/<!--ORACLE_CFG2-->/${ORACLE_CFG2}/g" /oltpbench/pom.xml
+    awk -v cfg="${ORACLE_CFG1}" "{ gsub(/<!--ORACLE_CFG1-->/,cfg); print}" /oltpbench/pom.xml > /tmp/mod.pom.xml
+    awk -v cfg="${ORACLE_CFG2}" "{ gsub(/<!--ORACLE_CFG2-->/,cfg); print}" /tmp/mod.pom.xml > /oltpbench/pom.xml
+
+    cat /oltpbench/pom.xml
+    cat /root/.m2/*
 }
 
 function main

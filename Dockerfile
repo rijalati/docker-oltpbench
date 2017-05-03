@@ -11,11 +11,11 @@ COPY bench-confgen.sh bench-confgen.sh
 COPY ntlmauth.dll /oltpbench/lib/
 COPY ojdbc-get.sh ojdbc-get.sh
 RUN chmod +x oltpbenchmark ojdbc-get.sh /start.sh
-RUN ./ojdbc-get.sh
-RUN git checkout errorprone && ant clean && ant
+RUN git checkout update-deps && git fetch
+RUN mvn clean && mvn package -P fixerrors
 
 
-ENV DBFQDN='' DBUSER='' DBPASS='' DBTYPE='' DBNAME='' DBPORT='' BENCH=''
-ENV CLEARBOOL='' CREATEBOOL='' EXECBOOL='' LOADBOOL=''
+ENV DBFQDN='' DBUSER='' DBPASS='' DBTYPE='' DBNAME='' DBPORT='' BENCH='' MVN_PASS=''
+ENV CLEARBOOL='' CREATEBOOL='' EXECBOOL='' LOADBOOL='' ORACLEMVN_USER='' ORACLEMVN_PASS=''
 
-ENTRYPOINT ["/start.sh"]
+#ENTRYPOINT ["/start.sh"]
