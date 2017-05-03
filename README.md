@@ -29,6 +29,7 @@ This image is designed to streamline the configuration and running of the oltpbe
  db2
  oracle
  sqlserver
+ 
 ```
 
 `DBNAME` -- name of database to connect to.
@@ -55,6 +56,7 @@ ycsb
 voter
 linkbench
 sibench
+
 ```
 
 **All `*BOOL` vars only accept true or false**
