@@ -1,5 +1,5 @@
 # oltpbench
-Dockerfile and scripts to auto generate configs and run oltpbench against RDBMS and (a couple) NoSQL systems
+Dockerfile and scripts to auto generate configs and run oltpbench against several types of RDBMS.
 
 ## Tools
 
@@ -23,12 +23,12 @@ This image is designed to streamline the configuration and running of the oltpbe
 `DBTYPE` -- type of database being tested (required for config generation), currently supported options are:
 
 ```
-           mysql
-           mariadb (uses the mariadb jdbc driver)
-           postgres
-           db2
-           oracle
-           sqlserver
+ mysql
+ mariadb (uses the mariadb jdbc driver)
+ postgres
+ db2
+ oracle
+ sqlserver
 ```
 
 `DBNAME` -- database to connect to.
@@ -38,21 +38,21 @@ This image is designed to streamline the configuration and running of the oltpbe
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 
 ```
-           tpcc
-           tpch
-           chbenchmark
-           auctionmark
-           epinions
-           jpab
-           resourcestresser
-           seats
-           tatp
-           twitter
-           wiki
-           ycsb
-           voter
-           linkbench
-           sibench
+tpcc
+tpch
+chbenchmark
+auctionmark
+epinions
+jpab
+resourcestresser
+seats
+tatp
+twitter
+wiki
+ycsb
+voter
+linkbench
+sibench
 ```
 
 **All `*BOOL` vars only accept true or false**
