@@ -89,18 +89,18 @@ EOF
     ORACLE_CFG2="$(cat <<-EOF
     <dependency>
       <groupId>com.oracle.jdbc</groupId>
-      <artifactId>ojdbc8</artifactId>
-      <version>12.2.0.1</version>
+      <artifactId>ojdbc7</artifactId>
+      <version>12.1.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.jdbc</groupId>
       <artifactId>orai18n</artifactId>
-      <version>12.2.0.1</version>
+      <version>12.1.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.jdbc</groupId>
       <artifactId>ucp</artifactId>
-      <version>12.2.0.1</version>
+      <version>12.1.0.1</version>
     </dependency>
 EOF
 )"
