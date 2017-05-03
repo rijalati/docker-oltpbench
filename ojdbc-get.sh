@@ -92,6 +92,16 @@ EOF
       <artifactId>ojdbc8</artifactId>
       <version>12.2.0.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.oracle.jdbc</groupId>
+      <artifactId>orai18n</artifactId>
+      <version>12.2.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.jdbc</groupId>
+      <artifactId>ucp</artifactId>
+      <version>12.2.0.1</version>
+    </dependency>
 EOF
 )"
 
