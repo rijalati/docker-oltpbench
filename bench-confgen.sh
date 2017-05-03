@@ -190,10 +190,12 @@ function main
                 ;;
             t )
                 dbtype="${OPTARG}"
-		typeset -u typechk
-		typechk="${dbtype}"
+		            typeset -u typechk
+		            typechk="${dbtype}"
                 if [[ ${typechk} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
+                    mvn clean
+                    mvn package -P fixerrors
                 else
                     :
                 fi
