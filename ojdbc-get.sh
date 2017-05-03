@@ -109,11 +109,16 @@ EOF
     <classpathentry kind="lib" path="lib/ojdbc8-12.2.0.1.jar"/>
 EOF
 )"
+    ORACLE_CFG4="$(cat <<-EOF
+    <dialect>config/dialects/tpcc_dialects.xml</dialect>
+EOF
+)"
     awk -v cfg="${ORACLE_CFG1}" "{ gsub(/<!--ORACLE_CFG1-->/,cfg); print}" /oltpbench/pom.xml > /tmp/mod.pom.xml
     awk -v cfg="${ORACLE_CFG2}" "{ gsub(/<!--ORACLE_CFG2-->/,cfg); print}" /tmp/mod.pom.xml > /oltpbench/pom.xml
     awk -v cfg="${ORACLE_CFG3}" "{ gsub(/<!--ORACLE_CFG3-->/,cfg); print}" /oltpbench/.classpath > /oltpbench/mod.classpath
+    awk -v cfg="${ORACLE_CFG4}" "{ gsub(/<!--ORACLE_CFG4-->/,cfg); print}" /oltpbench/config-templates/benchmarks/tpcc.xml > /tmp/mod.tpcc.xml
     mv /oltpbench/mod.classpath /oltpbench/.classpath
-
+    mv /tmp/mod.tpcc.xml /oltpbench/config-templates/benchmarks/tpcc.xml
     cat /oltpbench/pom.xml
     cat /root/.m2/*
 }
