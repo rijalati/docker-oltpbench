@@ -35,6 +35,8 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `DBPORT` -- port the DUT is listening on.
 
+`RATE` -- rate limit for the benchmark.
+
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 
 ```
