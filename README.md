@@ -59,7 +59,7 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `LOADBOOL` -- toggle database loading phase, can be useful if you want to reuse a previously populated database.
 
-** The following vars are only used if `DBTYPE` is set to 'oracle', in which case they are required**
+**The following vars are only used if `DBTYPE` is set to 'oracle', in which case they are required**
 
 `MVN_PASS` -- used to generate encrypted maven master password.
 
