@@ -1,7 +1,7 @@
 # oltpbench
 Dockerfile and scripts to auto generate configs and run oltpbench against RDBMS and (a couple) NoSQL systems
 
-## Getting Started
+## Tools
 
 This image is designed to streamline the configuration and running of the oltpbench benchmarking tool. To this end it comes with a some convenience scripts: 
 
