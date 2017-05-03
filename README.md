@@ -31,7 +31,7 @@ This image is designed to streamline the configuration and running of the oltpbe
  sqlserver
 ```
 
-`DBNAME` -- database to connect to.
+`DBNAME` -- name of database to connect to.
 
 `DBPORT` -- port the DUT is listening on.
 

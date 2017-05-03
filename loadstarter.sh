@@ -28,6 +28,8 @@ $(printf "${BOLD}OPTIONS${NORM}")
     name of the database you connecting to.
   -n <port>
     port number the database is listening on.
+  -r <rate>
+    rate limit for benchmark, defaults to unlimited.
   -f <fqdn>
     FQDN of the database you are connecting to.
   -b <bench>
@@ -45,7 +47,7 @@ EOF
 
 (( $# == 0 )) && usage
 
-while getopts :u:p:t:d:n:f:b: OPT; do
+while getopts :u:p:t:d:n:r:f:b: OPT; do
     case $OPT in
         u)
             DBUSER="${OPTARG}"
@@ -62,6 +64,9 @@ while getopts :u:p:t:d:n:f:b: OPT; do
         n)
             DBPORT="${OPTARG}"
             ;;
+	r)
+	    RATE="${OPTARG}"
+	    ;;
         f)
             DBFQDN="${OPTARG}"
             ;;
@@ -80,5 +85,6 @@ docker run -d --restart unless-stopped -e DBUSER="${DBUSER}" \
        -e DBPORT="${DBPORT}" -e DBFQDN="${DBFQDN}" -e BENCH="${BENCH}" \
        -e CLEARBOOL="${CLEARBOOL}" -e CREATEBOOL="${CREATEBOOL}" \
        -e EXECBOOL="${EXECBOOL}" -e LOADBOOL="${LOADBOOL}" \
+       -e RATE="${RATE:=unlimited}" \
        --entrypoint /start.sh --name ${DBFQDN} rijalati/oltpbench
 
