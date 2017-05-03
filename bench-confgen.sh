@@ -58,6 +58,7 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
 -t <dbtype> Type of database being targeted (those indicated with a '*' need
             config templates to be added):
              mysql
+	     mariadb
              postgres
              db2
              oracle
