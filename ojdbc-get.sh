@@ -120,7 +120,7 @@ EOF
     mv /oltpbench/mod.classpath /oltpbench/.classpath
     mv /tmp/mod.tpcc.xml /oltpbench/config-templates/benchmarks/tpcc.xml
     cat /oltpbench/pom.xml
-    cat /root/.m2/*
+    cat /root/.m2/*.xml
 }
 
 function main
