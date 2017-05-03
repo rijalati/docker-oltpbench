@@ -10,7 +10,9 @@ This is a link to a copy of the OTN License Agreement:
 function mksettings_xml
 {
 
-    mkdir /root/.m2
+    if [[ ! -d /root/.m2 ]]; then
+        mkdir /root/.m2
+    fi
 
     cat > /root/.m2/settings-security.xml <<-EOF
 <settingsSecurity>
