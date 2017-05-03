@@ -93,8 +93,14 @@ EOF
 EOF
 )"
 
+    ORACLE_CFG3="$(cat <<-EOF
+    <classpathentry kind="lib" path="lib/ojdbc8.jar"/>
+EOF
+)"
     awk -v cfg="${ORACLE_CFG1}" "{ gsub(/<!--ORACLE_CFG1-->/,cfg); print}" /oltpbench/pom.xml > /tmp/mod.pom.xml
     awk -v cfg="${ORACLE_CFG2}" "{ gsub(/<!--ORACLE_CFG2-->/,cfg); print}" /tmp/mod.pom.xml > /oltpbench/pom.xml
+    awk -v cfg="${ORACLE_CFG3}" "{ gsub(/<!--ORACLE_CFG3-->/,cfg); print}" /oltpbench/.classpath > /oltpbench/mod.classpath
+    mv /oltpbench/mod.classpath /oltpbench/.classpath
 
     cat /oltpbench/pom.xml
     cat /root/.m2/*
