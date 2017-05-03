@@ -14,7 +14,7 @@
       <!-- Note: The rate can be set to UNLIMITED or DISABLED.
            It can also be set per workload
            <rate bench="chbenchmark">disabled</rate> -->
-      <rate>unlimited</rate>
+      <rate>|RATE|</rate>
 
       <!-- Need to Specify transaction weights for each workload .. Otherwise the number of fields won't match -->
       <weights bench="tpcc">45,43,4,4,4</weights>

@@ -93,6 +93,8 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
 
 -n <port> Port DB is listening on.
 
+-r <rate> Rate limit for workload.
+
 ${ print "${BOLD}IMPLEMENTATION${NORM}"; }
   version         ${progname} (Blue Medora Inc.) v1.0
   author          Ritchie J Latimore <ritchie.latimore@bluemedora.com>
@@ -128,6 +130,7 @@ function genconf
     typeset tf=${tmpfile}
     typeset t=$(mktemp)
     typeset od=${outdir}
+    typeset r=${rate:=unlimited}
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
@@ -136,7 +139,7 @@ function genconf
     fi
 
     cat "config-templates/dbs/${ty}.xml" | sed "s/|FQDN|/${f}/; s/|PORT|/${pn}/; s/|DB|/${d}/" > ${t}
-    cat "config-templates/opts.xml" | sed "s/|USER|/${u}/; s/|PASS|/${p}/" >> ${t}
+    cat "config-templates/opts.xml" | sed "s/|USER|/${u}/; s/|PASS|/${p}/; s/|RATE|/${r}/" >> ${t}
 
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
@@ -177,7 +180,7 @@ function main
 
     (( $# == 0 )) && usage
 
-    while getopts f:u:p:t:d:n:b:o: OPT; do
+    while getopts f:u:p:t:d:r:n:b:o: OPT; do
         case "${OPT}" in
             f )
                 fqdn="${OPTARG}"
@@ -204,6 +207,9 @@ function main
             d )
                 database="${OPTARG}"
                 ;;
+	    r )
+		rate="${OPTARG}"
+		;;
             n )
                 port="${OPTARG}"
                 ;;
