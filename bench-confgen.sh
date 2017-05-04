@@ -7,7 +7,7 @@ typeset -r WORKDIR_PATH="${ cd "${WORKDIR}" && pwd; }"
 # set -n   # Uncomment to check script syntax, without execution.
 #          # NB. Do not forget to put the above comment back in or
 #          #       the shell script will not execute!
-# set -x   # Uncomment to debug this shell script
+ set -x   # Uncomment to debug this shell script
 # set -v   # 'verbose', displays input lines as they are read
 
 # DBGTRAP='print " file: ${.sh.file} cmd: "${.sh.command}" line: ${.sh.lineno} \n \
