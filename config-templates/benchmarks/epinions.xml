@@ -1,6 +1,6 @@
     
     <!-- Scalefactor in Epinions scales by *2000 the number of users-->
-    <scalefactor bench="epinions">100</scalefactor>
+    <scalefactor bench="epinions">10</scalefactor>
 
     <!-- Epinions Procedures Declaration -->
     <transactiontypes bench="epinions">
