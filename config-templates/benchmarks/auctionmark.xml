@@ -2,7 +2,7 @@
     <isolation bench="auctionmark">TRANSACTION_SERIALIZABLE</isolation>
 
     <!-- Scalefactor in AuctionMark scales by *1000 the number of customers-->
-    <scalefactor bench="auctionmark">1000</scalefactor>
+    <scalefactor bench="auctionmark">10</scalefactor>
 
     <!-- AuctionMark Procedures declaration -->
     <transactiontypes bench="auctionmark">
