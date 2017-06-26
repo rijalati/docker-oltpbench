@@ -201,18 +201,19 @@ function main
                     mvn package -P fixerrors
                 elif [[ ${dbtype} "DB2" ]];
                      sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
-                    ./db2jcc4-get.sh
+                     ./db2jcc4-get.sh
+                     ant clean
+                     ant build
                 else
                     :
                 fi
-
                 ;;
             d )
                 database="${OPTARG}"
                 ;;
-	    r )
-		rate="${OPTARG}"
-		;;
+	          r )
+		            rate="${OPTARG}"
+		            ;;
             n )
                 port="${OPTARG}"
                 ;;
