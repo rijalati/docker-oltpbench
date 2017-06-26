@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<parameters>
+  <!-- General Workload configuration -->
+  <dbtype>db2</dbtype>
+  <driver>com.ibm.db2.jcc.DB2Driver</driver>
+  <DBUrl>jdbc:db2://|FQDN|:|PORT|/|DB|</DBUrl>
+  <DBName>|DB|</DBName>
+  
