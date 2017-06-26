@@ -8,7 +8,7 @@ typeset -r WORKDIR_PATH="${ cd "${WORKDIR}" && pwd; }"
 #          # NB. Do not forget to put the above comment back in or
 #          #       the shell script will not execute!
 # Uncomment to debug this shell script
-set -x  
+set -x
 # 'verbose', displays input lines as they are read
 set -v
 # DBGTRAP='print " file: ${.sh.file} cmd: "${.sh.command}" line: ${.sh.lineno} \n \
@@ -199,7 +199,7 @@ function main
                     ./ojdbc-get.sh
                     mvn clean
                     mvn package -P fixerrors
-                elif [[ ${dbtype} "DB2" ]];
+                elif [[ ${dbtype} == "DB2" ]];
                      sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                      ./db2jcc4-get.sh
                      ant clean
