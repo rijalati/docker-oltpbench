@@ -16,6 +16,6 @@ fi
                          --clear "${CLEARBOOL:-true}" \
                          --create "${CREATEBOOL:-true}" \
                          --execute "${EXECBOOL:-true}" \
-                         --load ${LOADBOOL:-true}
+                         --load "${LOADBOOL:-true}"
 
 exit $?
