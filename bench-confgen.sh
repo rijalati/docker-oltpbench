@@ -199,13 +199,11 @@ function main
                     ./ojdbc-get.sh
                     mvn clean
                     mvn package -P fixerrors
-                elif [[ ${dbtype} == "DB2" ]];
+                elif [[ ${dbtype} == "DB2" ]]; then
                      sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                      ./db2jcc4-get.sh
                      ant clean
                      ant build
-                else
-                    :
                 fi
                 ;;
             d )
