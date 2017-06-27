@@ -194,7 +194,7 @@ function main
                 pass="${OPTARG}"
                 ;;
             t )
-                typeset -u dbtype="${OPTARG}"
+                typeset -u dbtype="${OPTARG}" # upcase whatever the user passes
                 if [[ ${dbtype} == "ORACLE" ]]; then
                     ./ojdbc-get.sh
                     mvn clean
@@ -203,6 +203,11 @@ function main
                     sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                     ./db2jcc4-get.sh
                     mvn clean
+                    mvn install:install-file -DlocalRepositoryPath=lib \
+                        -DcreateChecksum=true -Dpackaging=jar \
+                        -Dfile=${project.basedir}/lib/db2jcc4.jar \
+                        -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 \
+                        -Dversion=4.23.42
                     mvn package -P fixerrors
                 fi
                 ;;
