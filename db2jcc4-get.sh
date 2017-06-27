@@ -23,12 +23,11 @@ function update_pom
     <artifactId>db2jcc4</artifactId>
     <version>4.23.42</version>
     <scope>system</scope>
-    <systemPath>\${project.basedir}/lib/db2jcc4.jar</systemPath>
 </dependency>
 EOF
 )"
 
-    awk -v cfg="${IBM_CFG1}" "{ gsub(/<!--IBM_CFG1-->/,cfg); print}" /oltpbench/pom.xml > /tmp/mod.pom.xml
+    awk -v cfg="${IBM_CFG1}" "{ gsub(/<!--IBM_CFG1-->/,cfg); print}" pom.xml > /tmp/mod.pom.xml
     mv /tmp/mod.pom.xml /oltpbench/pom.xml
 
     return
@@ -40,7 +39,7 @@ function update_classpath
 <classpathentry kind="lib" path="lib/db2jcc4.jar"/>
 EOF
 )"
-    awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" /oltpbench/.classpath > /oltpbench/mod.classpath
+    awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" .classpath > /oltpbench/mod.classpath
     mv /oltpbench/mod.classpath /oltpbench/.classpath
 
     return
