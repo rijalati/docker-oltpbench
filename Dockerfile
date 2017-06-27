@@ -9,7 +9,6 @@ COPY config-templates/ /oltpbench/config-templates/
 COPY start.sh /start.sh
 COPY bench-confgen.sh bench-confgen.sh
 COPY ntlmauth.dll /oltpbench/lib/
-#COPY ojdbc-get.sh ojdbc-get.sh
 COPY db2jcc4-get.sh db2jcc4-get.sh
 RUN chmod +x oltpbenchmark /start.sh
 RUN git checkout errorprone && git fetch

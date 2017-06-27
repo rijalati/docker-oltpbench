@@ -26,7 +26,8 @@ function update_pom
     <version>4.23.42</version>
 </dependency>
 EOF
-  )"
+    )"
+
     IBM_CFG2="$(cat <<-EOF
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -51,7 +52,7 @@ EOF
         </executions>
       </plugin>
 EOF
-  )"
+    )"
 
     awk -v cfg="${IBM_CFG1}" "{ gsub(/<!--IBM_CFG1-->/,cfg); print}" pom.xml > /tmp/mod.pom.xml
     awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" /tmp/mod.pom.xml > /oltpbench/pom.xml
