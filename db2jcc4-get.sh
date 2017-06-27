@@ -4,7 +4,6 @@ set -vx
 
 function download_driver
 {
-    #mkdir -p /oltpbench/lib/repo #/com/ibm/db2/jcc/db2jcc4/4.23.42
 
     curl -H "Authorization: Basic |BASICAUTH|" \
          s3auth.bm-engops.com/oltpbench/db2jcc4.jar > lib/db2jcc4.jar \
