@@ -203,7 +203,8 @@ function main
                     sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                     ./db2jcc4-get.sh
                     mvn clean
-                    #mvn install:install-file -DlocalRepositoryPath=lib \
+                    mvn install
+                    #mvn install:install-file -DlocalRepositoryPath=/oltpbench/lib/repo \
                     #    -DcreateChecksum=true -Dpackaging=jar \
                     #    -Dfile=/tmp/db2jcc4.jar \
                     #    -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 \

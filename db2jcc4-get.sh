@@ -12,8 +12,8 @@ is in Keeper). If you do not work for Blue Medora consider building your own ima
 and manually embedding the driver in the image, or check out s3auth.com if you
 would like to put it on s3 like we did.\n"
 
-    mkdir -p /oltpbench/lib/repo/com/ibm/db2/jcc/db2jcc4/4.23.42
-    mv /tmp/db2jcc4.jar /oltpbench/lib/repo/com/ibm/jcc/db2jcc4/4.23.42/db2jcc4-4.23.42.jar
+    mkdir -p /oltpbench/lib/repo #/com/ibm/db2/jcc/db2jcc4/4.23.42
+    mv /tmp/db2jcc4.jar /oltpbench/lib/repo/db2jcc4-4.23.42.jar
 
     return
 }
