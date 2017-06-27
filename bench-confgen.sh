@@ -201,6 +201,7 @@ function main
                     mvn package -P fixerrors
                 elif [[ ${dbtype} == "DB2" ]]; then
                     sed -i "s/|BASICAUTH|/${BASICAUTH}/" db2jcc4-get.sh
+                    cat db2jcc4-get.sh
                     ./db2jcc4-get.sh
                     ls -al lib
                     mvn clean
@@ -211,8 +212,8 @@ function main
                         -DartifactId=db2jcc4 \
                         -Dversion=4.23.42 \
                         -Dpackaging=jar \
-                        -DgeneratePom=true
-                    mvn -U package -P fixerrors
+                        -DgeneratePom=true | tee install.out
+                    mvn -U package -P fixerrors | tee package.out
                 fi
                 ;;
             d )

@@ -24,15 +24,15 @@ function update_pom
     # between, the here document ends at the next empty line and
     # substitution will not be performed.
 
-    IBM_CFG1="$(cat <<''
+    IBM_CFG1="$(cat <<EOF
 <dependency>
     <groupId>com.ibm.db2.jcc</groupId>
     <artifactId>db2jcc4</artifactId>
     <version>4.23.42</version>
     <!-- <scope>system</scope>
-    <systemPath>${project.basedir}/lib/db2jcc4.jar</systemPath> -->
+    <systemPath>\${project.basedir}/lib/db2jcc4.jar</systemPath> -->
 </dependency>
-
+EOF
 )"
 
     IBM_CFG2="$(cat <<-EOF
