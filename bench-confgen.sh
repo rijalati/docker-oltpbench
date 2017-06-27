@@ -211,7 +211,7 @@ function main
                         -Dversion=4.23.42 \
                         -Dpackaging=jar \
                         -DgeneratePom=true
-                    mvn package -P fixerrors
+                    mvn -U package -P fixerrors
                 fi
                 ;;
             d )
