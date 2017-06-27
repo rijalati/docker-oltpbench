@@ -203,13 +203,12 @@ function main
                     sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                     ./db2jcc4-get.sh
                     mvn clean
-                    mvn install:install-file -DlocalRepositoryPath=lib \
-                        -DcreateChecksum=true -Dpackaging=jar \
-                        -Dfile=/tmp/db2jcc4.jar \
-                        -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 \
-                        -Dversion=4.23.42
+                    #mvn install:install-file -DlocalRepositoryPath=lib \
+                    #    -DcreateChecksum=true -Dpackaging=jar \
+                    #    -Dfile=/tmp/db2jcc4.jar \
+                    #    -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 \
+                    #    -Dversion=4.23.42
                     mvn package -P fixerrors
-                    rm -f /tmp/db2jcc4.jar
                 fi
                 ;;
             d )
