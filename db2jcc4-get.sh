@@ -4,10 +4,10 @@ set -vx
 
 function download_driver
 {
-    mkdir -p /oltpbench/lib/repo #/com/ibm/db2/jcc/db2jcc4/4.23.42
+    mkdir -p /oltpbench/lib/repo
 
     curl -H "Authorization: Basic |BASICAUTH|" \
-         s3auth.bm-engops.com/oltpbench/db2jcc4.jar > lib/repo/db2jcc4-4.23.42.jar \
+         s3auth.bm-engops.com/oltpbench/db2jcc4.jar > /tmp/db2jcc4-4.23.42.jar \
         || printf "Downloading DB2 jdbc driver failed, please provide the basic
 auth base64 encoded creds as the environment var BASICAUTH (the correct value
 is in Keeper). If you do not work for Blue Medora consider building your own image
@@ -38,7 +38,7 @@ EOF
           <artifactId>db2jcc4</artifactId>
           <version>4.23.42</version>
           <packaging>jar</packaging>
-          <file>${basedir}/lib/repo/db2jcc4-4.23.42.jar</file>
+          <file>/tmp/db2jcc4-4.23.42.jar</file>
           <generatePom>true</generatePom>
         </configuration>
         <executions>
@@ -63,7 +63,7 @@ EOF
 function update_classpath
 {
     IBM_CFG3="$(cat <<EOF
-<classpathentry kind="lib" path="lib/db2jcc4.jar"/>
+<classpathentry kind="lib" path="lib/repo/db2jcc4-4.23.42.jar"/>
 EOF
 )"
     awk -v cfg="${IBM_CFG3}" "{ gsub(/<!--IBM_CFG3-->/,cfg); print}" .classpath > /oltpbench/mod.classpath

@@ -64,19 +64,19 @@ while getopts :u:p:t:d:n:r:f:b: OPT; do
         n)
             DBPORT="${OPTARG}"
             ;;
-	r)
-	    RATE="${OPTARG}"
-	    ;;
+        r)
+            RATE="${OPTARG}"
+            ;;
         f)
             DBFQDN="${OPTARG}"
             ;;
         b)
             BENCH="${OPTARG}"
             ;;
-	* )
-	    printf "\nOption -${BOLD}%s${NORM} not allowed.\n\n" "${OPTARG}"
-	    usage
-	    ;;
+        * )
+	        printf "\nOption -${BOLD}%s${NORM} not allowed.\n\n" "${OPTARG}"
+	        usage
+	        ;;
     esac
 done
 
