@@ -205,10 +205,11 @@ function main
                     mvn clean
                     mvn install:install-file -DlocalRepositoryPath=lib \
                         -DcreateChecksum=true -Dpackaging=jar \
-                        -Dfile=${project.basedir}/lib/db2jcc4.jar \
+                        -Dfile=/tmp/db2jcc4.jar \
                         -DgroupId=com.ibm.db2.jcc -DartifactId=db2jcc4 \
                         -Dversion=4.23.42
                     mvn package -P fixerrors
+                    rm -f /tmp/db2jcc4.jar
                 fi
                 ;;
             d )

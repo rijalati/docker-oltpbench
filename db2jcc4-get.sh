@@ -5,7 +5,7 @@ set -vx
 function download_driver
 {
     curl -H "Authorization: Basic |BASICAUTH|" \
-         s3auth.bm-engops.com/oltpbench/db2jcc4.jar > lib/db2jcc4.jar \
+         s3auth.bm-engops.com/oltpbench/db2jcc4.jar > /tmp/db2jcc4.jar \
         || printf "Downloading DB2 jdbc driver failed, please provide the basic
 auth base64 encoded creds as the environment var BASICAUTH (the correct value
 is in Keeper). If you are outside Blue Medora consider building your own image
