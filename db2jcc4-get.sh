@@ -27,21 +27,46 @@ function update_pom
     <version>4.23.42</version>
 </dependency>
 EOF
-)"
+  )"
+    IBM_CFG2="$(cat <<-EOF
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+          <groupId>org.ibm.db2.jcc</groupId>
+          <artifactId>db2jcc4</artifactId>
+          <version>4.23.42</version>
+          <packaging>jar</packaging>
+          <file>${basedir}/lib/repo/db2jcc4-4.23.42.jar</file>
+          <generatePom>true</generatePom>
+        </configuration>
+        <executions>
+          <execution>
+            <id>install-jar-lib</id>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+EOF
+  )"
 
     awk -v cfg="${IBM_CFG1}" "{ gsub(/<!--IBM_CFG1-->/,cfg); print}" pom.xml > /tmp/mod.pom.xml
-    mv /tmp/mod.pom.xml /oltpbench/pom.xml
+    awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" /tmp/mod.pom.xml > /oltpbench/pom.xml
 
     return
 }
 
 function update_classpath
 {
-    IBM_CFG2="$(cat <<EOF
+    IBM_CFG3="$(cat <<EOF
 <classpathentry kind="lib" path="lib/db2jcc4.jar"/>
 EOF
 )"
-    awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" .classpath > /oltpbench/mod.classpath
+    awk -v cfg="${IBM_CFG3}" "{ gsub(/<!--IBM_CFG3-->/,cfg); print}" .classpath > /oltpbench/mod.classpath
     mv /oltpbench/mod.classpath /oltpbench/.classpath
 
     return
