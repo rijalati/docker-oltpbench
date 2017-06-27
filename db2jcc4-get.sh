@@ -19,9 +19,12 @@ would like to put it on s3 like we did.\n"
 
 function update_pom
 {
-    # in mksh not using an identifier for a heredoc keeps it from trying to
-    # do shell expansion, the heredoc ends on the next empty line
-    IBM_CFG1="$(cat <<
+    # If the heredoc marker is only a set
+    # of either single "''" or double '""' quotes with nothing in
+    # between, the here document ends at the next empty line and
+    # substitution will not be performed.
+
+    IBM_CFG1="$(cat <<''
 <dependency>
     <groupId>com.ibm.db2.jcc</groupId>
     <artifactId>db2jcc4</artifactId>
@@ -42,7 +45,7 @@ function update_pom
           <artifactId>db2jcc4</artifactId>
           <version>4.23.42</version>
           <packaging>jar</packaging>
-          <file>/tmp/db2jcc4.jar</file>
+          <file>${package.basedir}/lib/db2jcc4.jar</file>
           <generatePom>true</generatePom>
         </configuration>
         <executions>
