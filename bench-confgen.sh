@@ -203,7 +203,7 @@ function main
                     sed -i 's/|BASICAUTH|/${BASICAUTH}/' db2jcc4-get.sh
                     ./db2jcc4-get.sh
                     mvn clean
-                    mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file \
+                    mvn -U org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file \
                         -DlocalRepositoryPath=lib/repo \
                         -Dfile=/tmp/db2jcc4.jar \
                         -DgroupId=com.ibm.db2.jcc \
