@@ -52,6 +52,7 @@ function main
     update_pom
     update_classpath
 
+    cat pom.xml .classpath
     return
 }
 
