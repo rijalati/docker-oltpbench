@@ -19,15 +19,17 @@ would like to put it on s3 like we did.\n"
 
 function update_pom
 {
-    IBM_CFG1="$(cat <<EOF
+    # in mksh not using an identifier for a heredoc keeps it from trying to
+    # do shell expansion, the heredoc ends on the next empty line
+    IBM_CFG1="$(cat <<
 <dependency>
     <groupId>com.ibm.db2.jcc</groupId>
     <artifactId>db2jcc4</artifactId>
     <version>4.23.42</version>
     <!-- <scope>system</scope>
-    <systemPath>/oltpbench/lib/db2jcc4.jar</systemPath> -->
+    <systemPath>${project.basedir}/lib/db2jcc4.jar</systemPath> -->
 </dependency>
-EOF
+
 )"
 
     IBM_CFG2="$(cat <<-EOF
