@@ -41,7 +41,7 @@ function update_classpath
 EOF
 )"
     awk -v cfg="${IBM_CFG2}" "{ gsub(/<!--IBM_CFG2-->/,cfg); print}" /oltpbench/.classpath > /oltpbench/mod.classpath
-    mv /tmp/.classpath /oltpbench/.classpath
+    mv /oltpbench/mod.classpath /oltpbench/.classpath
 
     return
 }
