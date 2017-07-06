@@ -58,7 +58,6 @@ EOF
 function updatepom_xml
 {
     ORACLE_CFG1="$(cat <<-EOF
-  <repositories>
     <repository>
       <id>maven.oracle.com</id>
       <name>oracle-maven-repo</name>
@@ -69,7 +68,6 @@ function updatepom_xml
         <updatePolicy>always</updatePolicy>
       </releases>
     </repository>
-  </repositories>
 
   <pluginRepositories>
     <pluginRepository>
