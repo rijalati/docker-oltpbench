@@ -219,9 +219,9 @@ function main
             d )
                 database="${OPTARG}"
                 ;;
-	          r )
-		            rate="${OPTARG}"
-		            ;;
+	    r )
+		rate="${OPTARG}"
+		;;
             n )
                 port="${OPTARG}"
                 ;;
