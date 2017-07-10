@@ -97,6 +97,8 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
 
 -r <rate> Rate limit for workload.
 
+-c <clients> number of clients that will be simulated connecting to the database.
+
 ${ print "${BOLD}IMPLEMENTATION${NORM}"; }
   version         ${progname} (Blue Medora Inc.) v1.0
   author          Ritchie J Latimore <ritchie.latimore@bluemedora.com>
