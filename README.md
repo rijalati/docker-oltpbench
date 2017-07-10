@@ -38,6 +38,8 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `RATE` -- rate limit for the benchmark.
 
+`CLIENTS` -- the number of clients you would like to simulate connecting to the database.
+
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 
 ```

@@ -18,10 +18,6 @@ would like to put it on s3 like we did.\n"
 
 function update_pom
 {
-    # If the heredoc marker is only a set
-    # of either single "''" or double '""' quotes with nothing in
-    # between, the here document ends at the next empty line and
-    # substitution will not be performed.
 
     IBM_CFG1="$(cat <<EOF
 <dependency>
