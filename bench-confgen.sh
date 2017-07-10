@@ -133,6 +133,7 @@ function genconf
     typeset t=$(mktemp)
     typeset od=${outdir}
     typeset r=${rate:=unlimited}
+    typeset c=${clients:=10}
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
@@ -141,7 +142,7 @@ function genconf
     fi
 
     cat "config-templates/dbs/${ty}.xml" | sed "s/|FQDN|/${f}/; s/|PORT|/${pn}/; s/|DB|/${d}/" > ${t}
-    cat "config-templates/opts.xml" | sed "s/|USER|/${u}/; s/|PASS|/${p}/; s/|RATE|/${r}/" >> ${t}
+    cat "config-templates/opts.xml" | sed "s/|USER|/${u}/; s/|PASS|/${p}/; s/|RATE|/${r}/; s/|CLIENTS|/${c}/" >> ${t}
 
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
@@ -182,7 +183,7 @@ function main
 
     (( $# == 0 )) && usage
 
-    while getopts f:u:p:t:d:r:n:b:o: OPT; do
+    while getopts f:u:p:t:d:r:c:n:b:o: OPT; do
         case "${OPT}" in
             f )
                 fqdn="${OPTARG}"
@@ -221,6 +222,9 @@ function main
                 ;;
 	    r )
 		rate="${OPTARG}"
+		;;
+	    c )
+	    	clients="${OPTARG}"
 		;;
             n )
                 port="${OPTARG}"
