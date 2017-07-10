@@ -9,7 +9,7 @@ if [[ -z ${DBUSER} && -z ${DBPASS} && -z ${DBTYPE} && -z ${DBNAME} && -z ${DBPOR
 else
     /oltpbench/bench-confgen.sh -f "${DBFQDN}" -u "${DBUSER}" \
         -p "${DBPASS}" -t "${DBTYPE}" -d "${DBNAME}" \
-        -n "${DBPORT}" -b "${BENCH}" -o "${target}"
+        -n "${DBPORT}" -b "${BENCH}" -o "${target}" -r "${RATE}" -c "${CLIENTS}"
 fi
 
 /oltpbench/oltpbenchmark -b "${BENCH}" -c "${target}/${DBFQDN}.xml" \
