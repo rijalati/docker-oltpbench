@@ -3,7 +3,7 @@
 
   <!-- The workload -->
   <!-- Number of terminal per workload -->
-  <terminals>30</terminals>
+  <terminals>|CLIENTS|</terminals>
 
   <works>
 
