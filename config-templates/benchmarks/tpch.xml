@@ -1,7 +1,7 @@
 
     <isolation bench="tpch">TRANSACTION_READ_COMMITTED</isolation>
     <datadir bench="tpch">data/tpch1</datadir>
-    <scalefactor bench="tpch">10</scalefactor>
+    <scalefactor bench="tpch">|SCALE|</scalefactor>
 
 
     <transactiontypes bench="tpch">

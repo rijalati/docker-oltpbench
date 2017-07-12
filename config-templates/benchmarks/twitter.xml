@@ -3,7 +3,7 @@
     <isolation bench="twitter">TRANSACTION_SERIALIZABLE</isolation>
           
     <!-- Scalefactor in Twitter scales by *500 the number of users-->
-    <scalefactor bench="twitter">100</scalefactor>
+    <scalefactor bench="twitter">|SCALE|</scalefactor>
     
     
 	<!-- Trace files for Twitter -->

@@ -36,9 +36,9 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `DBPORT` -- port the DUT is listening on.
 
-`RATE` -- rate limit for the benchmark.
+`RATE` -- rate limit for the benchmark. (defaults to unlimited)
 
-`CLIENTS` -- the number of clients you would like to simulate connecting to the database.
+`CLIENTS` -- the number of clients you would like to simulate connecting to the DUT. (defaults to 10)
 
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 

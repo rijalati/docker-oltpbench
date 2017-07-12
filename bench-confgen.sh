@@ -136,6 +136,7 @@ function genconf
     typeset od=${outdir}
     typeset r=${rate:=unlimited}
     typeset c=${clients:=10}
+    typeset s="${scale:=100}"
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
@@ -148,7 +149,7 @@ function genconf
 
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
-        cat "config-templates/benchmarks/${b}.xml" >> ${t}
+        cat "config-templates/benchmarks/${b}.xml" | sed "s/|SCALE|/${s}/" >> ${t}
     done
 
     printf "\n</parameters>\n" >> ${t}
@@ -185,7 +186,7 @@ function main
 
     (( $# == 0 )) && usage
 
-    while getopts f:u:p:t:d:r:c:n:b:o: OPT; do
+    while getopts f:u:p:t:d:r:c:s:n:b:o: OPT; do
         case "${OPT}" in
             f )
                 fqdn="${OPTARG}"
@@ -227,7 +228,10 @@ function main
 		;;
 	    c )
 	    	clients="${OPTARG}"
-		;;
+		    ;;
+      s )
+          scale="${OPTARG}"
+          ;;
             n )
                 port="${OPTARG}"
                 ;;

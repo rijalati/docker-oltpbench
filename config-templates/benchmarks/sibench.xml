@@ -2,7 +2,7 @@
 
     <isolation bench="sibench">TRANSACTION_SERIALIZABLE</isolation>
     
-    <scalefactor bench="sibench">100</scalefactor>
+    <scalefactor bench="sibench">|SCALE|</scalefactor>
     
     <!-- SIBENCH Procedures declaration -->
     <transactiontypes bench="sibench">

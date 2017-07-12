@@ -1,6 +1,6 @@
     
     <!-- Number of Initial Objects -->
-    <scalefactor bench="jpab">1000000</scalefactor>
+    <scalefactor bench="jpab">|SCALE|</scalefactor>
     
     <!-- Hibernate configuration -->
     <persistence-unit bench="jpab">Hibernate-MySQL-server</persistence-unit>

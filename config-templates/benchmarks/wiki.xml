@@ -1,7 +1,7 @@
     <isolation bench="wiki">TRANSACTION_SERIALIZABLE</isolation>
     
     <!-- Scale factor is the number of wikipages *1000 -->
-    <scalefactor bench="wiki">100</scalefactor>
+    <scalefactor bench="wiki">|SCALE|</scalefactor>
     
     <!-- Wikipedia Trace Options -->
     <tracefile bench="wiki">config/traces/wikipedia-100k.trace</tracefile>

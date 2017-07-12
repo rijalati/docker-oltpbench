@@ -1,7 +1,7 @@
     <isolation bench="ycsb">TRANSACTION_SERIALIZABLE</isolation>
     
     <!-- Scalefactor in YCSB is *1000 the number of rows in the USERTABLE-->
-    <scalefactor bench="ycsb">1200</scalefactor>
+    <scalefactor bench="ycsb">|SCALE|</scalefactor>
 
     <!-- YCSB Procedures declaration -->
     <transactiontypes bench="ycsb">
