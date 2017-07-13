@@ -17,7 +17,7 @@
       <rate>|RATE|</rate>
 
       <!-- Need to Specify transaction weights for each workload .. Otherwise the number of fields won't match -->
-      <weights bench="tpcc">45,43,4,4,4</weights>
+      <weights bench="tpcc">45,43,0,0,12</weights>
       <weights bench="chbenchmark">3, 2, 3, 2 , 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,5, 5, 5, 5, 5, 5, 5</weights>
       <weights bench="tpch">1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0,1,0</weights>
       <weights bench="auctionmark">26, 10, 20, 7, 5, 4, 10, 10,8</weights>
