@@ -12,7 +12,8 @@ else
         -n "${DBPORT}" -b "${BENCH}" -o "${target}" -r "${RATE}" -c "${CLIENTS}"
 fi
 
-/oltpbench/oltpbenchmark --histograms -s 1000 -b "${BENCH}" -c "${target}/${DBFQDN}.xml" \
+/oltpbench/oltpbenchmark --verbose --histograms -s 1000 -ss --interval-monitor 5000 \
+						 -b "${BENCH}" -c "${target}/${DBFQDN}.xml" \
                          --clear "${CLEARBOOL:-true}" \
                          --create "${CREATEBOOL:-true}" \
                          --execute "${EXECBOOL:-true}" \
