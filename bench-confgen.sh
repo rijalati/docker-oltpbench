@@ -136,7 +136,7 @@ function genconf
     typeset od=${outdir}
     typeset r=${rate:=unlimited}
     typeset c=${clients:=10}
-    typeset s="${scale:=100}"
+    typeset s=${scale:=500}
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
