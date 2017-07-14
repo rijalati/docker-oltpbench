@@ -40,7 +40,7 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `CLIENTS` -- the number of clients you would like to simulate connecting to the DUT. (defaults to 10)
 
-`SCALE` -- size of the dataset generated for the benchmark being run, what this means varies per benchmark:
+`SCALE` -- size of the dataset generated for the benchmark being run, what this means varies per benchmark (defaults to 100):
 
 ```
 tpcc -- number of warehouses in TPCC
@@ -62,7 +62,7 @@ noop
 smallbank
 hyadapt
 ```
-`ISOLATION` -- the transaction isolation level to be used for the benchmark, one of:
+`ISOLATION` -- the transaction isolation level to be used for the benchmark, one of (defaults to TRANSACTION_READ_COMMITED):
 
 ```
 TRANSACTION_REPEATABLE_READ

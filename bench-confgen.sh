@@ -138,7 +138,8 @@ function genconf
     od=${outdir} \
     r=${rate:=unlimited} \
     c=${clients:=10} \
-    i=${isolation:=TRANSACTION_READ_COMMITED}
+    i=${isolation:=TRANSACTION_READ_COMMITED} \
+    s=${scale:=100}
 
 
 
@@ -154,7 +155,7 @@ function genconf
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
         cat "config-templates/benchmarks/${b}.xml" \
-            | sed "s/|SCALE|/${scale:-300}/; s/|ISOLATION|/${i}/" >> ${t}
+            | sed "s/|SCALE|/${s}/; s/|ISOLATION|/${i}/" >> ${t}
     done
 
     printf "\n</parameters>\n" >> ${t}
