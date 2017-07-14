@@ -125,18 +125,20 @@ function fatal_error
 # Generate a config file with the user specified values
 function genconf
 {
-    typeset f=${fqdn}
-    typeset pn=${port}
-    typeset d=${database}
-    typeset u=${user}
-    typeset p=${pass}
-    typeset ty=${dbtype}
-    typeset tf=${tmpfile}
-    typeset t=$(mktemp)
-    typeset od=${outdir}
-    typeset r=${rate:=unlimited}
-    typeset c=${clients:=10}
-    
+    eval typeset f=${fqdn} \
+    pn=${port} \
+    d=${database} \
+    u=${user} \
+    p=${pass} \
+    ty=${dbtype} \
+    tf=${tmpfile} \
+    t=$(mktemp) \
+    od=${outdir} \
+    r=${rate:=unlimited} \
+    c=${clients:=10} \
+    i=${isolation:=TRANSACTION_READ_COMMITED}
+
+
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
@@ -149,7 +151,8 @@ function genconf
 
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
-        cat "config-templates/benchmarks/${b}.xml" | sed "s/|SCALE|/${scale:-300}/" >> ${t}
+        cat "config-templates/benchmarks/${b}.xml" \
+            | sed "s/|SCALE|/${scale:-300}/; s/|ISOLATION|/${i}/" >> ${t}
     done
 
     printf "\n</parameters>\n" >> ${t}
@@ -186,77 +189,80 @@ function main
 
     (( $# == 0 )) && usage
 
-    while getopts f:u:p:t:d:r:c:s:n:b:o: OPT; do
-        case "${OPT}" in
-            f )
-                fqdn="${OPTARG}"
-                ;;
-            u )
-                user="${OPTARG}"
-                ;;
-            p )
-                pass="${OPTARG}"
-                ;;
-            t )
-                typeset -u dbtype="${OPTARG}" # upcase whatever the user passes
-                if [[ ${dbtype} == "ORACLE" ]]; then
-                    ./ojdbc-get.sh
-                    mvn clean
-                    mvn package -P fixerrors
-                elif [[ ${dbtype} == "DB2" ]]; then
-                    sed -i "s/|BASICAUTH|/${BASICAUTH}/" db2jcc4-get.sh
-                    cat db2jcc4-get.sh
-                    ./db2jcc4-get.sh
-                    ls -al lib
-                    mvn clean
-                    mvn -U org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file \
-                        -DlocalRepositoryPath=lib/repo \
-                        -Dfile="${PWD}/lib/db2jcc4.jar" \
-                        -DgroupId=com.ibm.db2.jcc \
-                        -DartifactId=db2jcc4 \
-                        -Dversion=4.23.42 \
-                        -Dpackaging=jar \
-                        -DgeneratePom=true | tee install.out
-                    mvn -U package -P fixerrors | tee package.out
-                fi
-                ;;
-            d )
-                database="${OPTARG}"
-                ;;
-	        r )
-		        rate="${OPTARG}"
-		        ;;
-	        c )
-	    	    clients="${OPTARG}"
-		        ;;
-            s )
-                scale="${OPTARG}"
-                ;;
-            n )
-                port="${OPTARG}"
-                ;;
-            b )
-                if [[ -z ${OPTARG} ]]; then
-                    eval :
-                else
-                    unset bench
-                    IFS=,
-                    bench=( ${OPTARG} )
-                    unset IFS
-                fi
-                ;;
-            o )
-                outdir="${OPTARG}"
-                ;;
-            * )
-                usage
-                ;;
-        esac
-    done
+while getopts f:u:p:t:d:r:c:s:i:n:b:o: OPT; do
+case "${OPT}" in
+f )
+fqdn="${OPTARG}"
+;;
+u )
+user="${OPTARG}"
+;;
+p )
+pass="${OPTARG}"
+;;
+t )
+typeset -u dbtype="${OPTARG}" # upcase whatever the user passes
+if [[ ${dbtype} == "ORACLE" ]]; then
+./ojdbc-get.sh
+mvn clean
+mvn package -P fixerrors
+elif [[ ${dbtype} == "DB2" ]]; then
+sed -i "s/|BASICAUTH|/${BASICAUTH}/" db2jcc4-get.sh
+cat db2jcc4-get.sh
+./db2jcc4-get.sh
+ls -al lib
+mvn clean
+mvn -U org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file \
+-DlocalRepositoryPath=lib/repo \
+-Dfile="${PWD}/lib/db2jcc4.jar" \
+-DgroupId=com.ibm.db2.jcc \
+-DartifactId=db2jcc4 \
+-Dversion=4.23.42 \
+-Dpackaging=jar \
+-DgeneratePom=true | tee install.out
+mvn -U package -P fixerrors | tee package.out
+fi
+;;
+d )
+database="${OPTARG}"
+;;
+r )
+rate="${OPTARG}"
+;;
+c )
+clients="${OPTARG}"
+;;
+s )
+scale="${OPTARG}"
+;;
+i )
+isolation="${OPTARG}"
+;;
+n )
+port="${OPTARG}"
+;;
+b )
+if [[ -z ${OPTARG} ]]; then
+eval :
+else
+unset bench
+IFS=,
+bench=( ${OPTARG} )
+unset IFS
+fi
+;;
+o )
+outdir="${OPTARG}"
+;;
+* )
+usage
+;;
+esac
+done
 
-    genconf
+genconf
 
-    return 0
+return 0
 
 }
 
