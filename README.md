@@ -40,6 +40,36 @@ This image is designed to streamline the configuration and running of the oltpbe
 
 `CLIENTS` -- the number of clients you would like to simulate connecting to the DUT. (defaults to 10)
 
+`SCALE` -- size of the dataset generated for the benchmark being run, what this means varies per benchmark:
+
+```
+tpcc -- number of warehouses in TPCC
+tpch
+tatp -- number of subscribers
+wikipedia -- the number of wikipages *1000
+resourcestresser -- scales by *100 the number of employees
+twitter -- scales by *500 the number of users
+epinions -- scales by *2000 the number of users
+ycsb --  *1000 the number of rows in the USERTABLE
+jpab -- Number of Initial Objects
+seats -- scales by *1000 the number of customers
+auctionmark -- scales by *1000 the number of customers
+chbenchmark
+voter
+linkbench -- scale is ignored in LinkBench for now, to be replaced by max_id
+sibench
+noop
+smallbank
+hyadapt
+```
+`ISOLATION` -- the transaction isolation level to be used for the benchmark, one of:
+
+```
+TRANSACTION_REPEATABLE_READ
+TRANSACTION_READ_COMMITTED
+TRANSACTION_SERIALIZABLE
+```
+
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 
 ```
