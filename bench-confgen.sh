@@ -99,6 +99,8 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
 
 -c <clients> number of clients that will be simulated connecting to the database.
 
+-i <isolation> either: TRANSACTION_READ_COMMITED || TRANSACTION_SERIALIZABLE
+
 ${ print "${BOLD}IMPLEMENTATION${NORM}"; }
   version         ${progname} (Blue Medora Inc.) v1.0
   author          Ritchie J Latimore <ritchie.latimore@bluemedora.com>
