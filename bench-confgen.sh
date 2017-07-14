@@ -136,7 +136,7 @@ function genconf
     typeset od=${outdir}
     typeset r=${rate:=unlimited}
     typeset c=${clients:=10}
-    typeset s=${scale:=500}
+    
 
     if [[ -z ${od} ]]; then
         eval typeset o="my-templates/${f}.xml"
@@ -149,7 +149,7 @@ function genconf
 
     for b in ${bench[@]}; do
         print "\n<!-- partition -->\n" >> ${t}
-        cat "config-templates/benchmarks/${b}.xml" | sed "s/|SCALE|/${s}/" >> ${t}
+        cat "config-templates/benchmarks/${b}.xml" | sed "s/|SCALE|/${scale:-300}/" >> ${t}
     done
 
     printf "\n</parameters>\n" >> ${t}
@@ -223,15 +223,15 @@ function main
             d )
                 database="${OPTARG}"
                 ;;
-	    r )
-		rate="${OPTARG}"
-		;;
-	    c )
-	    	clients="${OPTARG}"
-		    ;;
-      s )
-          scale="${OPTARG}"
-          ;;
+	        r )
+		        rate="${OPTARG}"
+		        ;;
+	        c )
+	    	    clients="${OPTARG}"
+		        ;;
+            s )
+                scale="${OPTARG}"
+                ;;
             n )
                 port="${OPTARG}"
                 ;;
