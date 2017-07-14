@@ -62,6 +62,8 @@ noop
 smallbank
 hyadapt
 ```
+
+
 `ISOLATION` -- the transaction isolation level to be used for the benchmark, one of (defaults to TRANSACTION_READ_COMMITED):
 
 ```
@@ -69,6 +71,7 @@ TRANSACTION_REPEATABLE_READ
 TRANSACTION_READ_COMMITTED
 TRANSACTION_SERIALIZABLE
 ```
+
 
 `BENCH` -- which benchmark to run against the DUT, currently supported options:
 
@@ -90,6 +93,7 @@ linkbench
 sibench
 
 ```
+
 
 **All `*BOOL` vars only accept true or false**
 
