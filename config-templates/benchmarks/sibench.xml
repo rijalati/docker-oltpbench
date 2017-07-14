@@ -1,6 +1,6 @@
 
 
-    <isolation bench="sibench">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="sibench">|ISOLATION|</isolation>
     
     <scalefactor bench="sibench">|SCALE|</scalefactor>
     

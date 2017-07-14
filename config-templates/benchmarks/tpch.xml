@@ -1,5 +1,5 @@
 
-    <isolation bench="tpch">TRANSACTION_READ_COMMITTED</isolation>
+    <isolation bench="tpch">|ISOLATION|</isolation>
     <datadir bench="tpch">data/tpch1</datadir>
     <scalefactor bench="tpch">|SCALE|</scalefactor>
 

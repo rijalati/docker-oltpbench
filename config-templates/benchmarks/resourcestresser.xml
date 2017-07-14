@@ -1,4 +1,4 @@
-    <isolation bench="resourcestresser">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="resourcestresser">|ISOLATION|</isolation>
     
     <!-- R/S Procedures declaration -->
     <transactiontypes bench="resourcestresser">

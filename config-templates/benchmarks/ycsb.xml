@@ -1,4 +1,4 @@
-    <isolation bench="ycsb">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="ycsb">|ISOLATION|</isolation>
     
     <!-- Scalefactor in YCSB is *1000 the number of rows in the USERTABLE-->
     <scalefactor bench="ycsb">|SCALE|</scalefactor>

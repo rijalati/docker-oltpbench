@@ -1,4 +1,4 @@
-    <isolation bench="wiki">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="wiki">|ISOLATION|</isolation>
     
     <!-- Scale factor is the number of wikipages *1000 -->
     <scalefactor bench="wiki">|SCALE|</scalefactor>

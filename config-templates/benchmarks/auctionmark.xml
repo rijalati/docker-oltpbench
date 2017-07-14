@@ -1,5 +1,5 @@
 
-    <isolation bench="auctionmark">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="auctionmark">|ISOLATION|</isolation>
 
     <!-- Scalefactor in AuctionMark scales by *1000 the number of customers-->
     <scalefactor bench="auctionmark">|SCALE|</scalefactor>

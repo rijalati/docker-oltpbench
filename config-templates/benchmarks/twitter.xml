@@ -1,6 +1,6 @@
 
 
-    <isolation bench="twitter">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="twitter">|ISOLATION|</isolation>
           
     <!-- Scalefactor in Twitter scales by *500 the number of users-->
     <scalefactor bench="twitter">|SCALE|</scalefactor>

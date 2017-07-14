@@ -1,5 +1,5 @@
 
-	<isolation bench="linkbench">TRANSACTION_REPEATABLE_READ</isolation>
+	<isolation bench="linkbench">|ISOLATION|</isolation>
 
 	<!-- Configuration file of LinkBench -->
 	<configfile bench="linkbench">config/extras/LinkBenchConfiguration.properties</configfile>

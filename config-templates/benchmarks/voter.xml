@@ -1,4 +1,4 @@
-    <isolation bench="voter">TRANSACTION_SERIALIZABLE</isolation>
+    <isolation bench="voter">|ISOLATION|</isolation>
     
     <scalefactor bench="voter">|SCALE|</scalefactor>
  
