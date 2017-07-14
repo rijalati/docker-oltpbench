@@ -9,7 +9,8 @@ if [[ -z ${DBUSER} && -z ${DBPASS} && -z ${DBTYPE} && -z ${DBNAME} && -z ${DBPOR
 else
     /oltpbench/bench-confgen.sh -f "${DBFQDN}" -u "${DBUSER}" \
         -p "${DBPASS}" -t "${DBTYPE}" -d "${DBNAME}" \
-        -n "${DBPORT}" -b "${BENCH}" -o "${target}" -r "${RATE}" -c "${CLIENTS}"
+        -n "${DBPORT}" -b "${BENCH}" -o "${target}" \
+        -r "${RATE}" -c "${CLIENTS}" -s "${SCALE}" -i "${ISOLATION}"
 fi
 
 /oltpbench/oltpbenchmark --verbose --histograms -s 1000 -ss --interval-monitor 5000 \
