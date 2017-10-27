@@ -106,7 +106,7 @@ EOF
 )"
 
     ORACLE_CFG3="$(cat <<-EOF
-    <classpathentry kind="lib" path="lib/ojdbc8-12.2.0.1.jar"/>
+    <classpathentry kind="lib" path="lib/ojdbc7-12.1.0.2.jar"/>
 EOF
 )"
     ORACLE_CFG4="$(cat <<-EOF
