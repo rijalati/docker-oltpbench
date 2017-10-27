@@ -2,5 +2,5 @@
 <parameters>
     <dbtype>sqlserver</dbtype>
     <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
-    <DBUrl>jdbc:jtds:sqlserver://|FQDN|:|PORT|;databaseName=|DB|</DBUrl>
+    <DBUrl>jdbc:sqlserver://|FQDN|:|PORT|;databaseName=|DB|</DBUrl>
     <DBName>|DB|</DBName>
