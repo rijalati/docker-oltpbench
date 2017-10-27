@@ -29,6 +29,7 @@ This image is designed to streamline the configuration and running of the oltpbe
  db2
  oracle
  sqlserver
+ jtds_sqlserver (uses the jtds driver)
  
 ```
 

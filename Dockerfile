@@ -11,7 +11,7 @@ COPY start.sh /start.sh
 COPY bench-confgen.sh bench-confgen.sh
 COPY ntlmauth.dll /oltpbench/lib/
 COPY db2jcc4-get.sh db2jcc4-get.sh
-RUN chmod +x oltpbenchmark /start.sh
+RUN chmod +x oltpbenchmark /start.sh ojdbc-get.sh
 RUN git checkout driver-bump && git fetch
 RUN mvn clean && mvn package -P fixerrors
 
