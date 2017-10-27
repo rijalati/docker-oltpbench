@@ -127,19 +127,19 @@ function fatal_error
 # Generate a config file with the user specified values
 function genconf
 {
-    eval typeset f=${fqdn} \
-    pn=${port} \
-    d=${database} \
-    u=${user} \
-    p=${pass} \
-    ty=${dbtype} \
-    tf=${tmpfile} \
+    eval typeset f="${fqdn}" \
+    pn="${port}" \
+    d="${database}" \
+    u="${user}" \
+    p="${pass}" \
+    ty="${dbtype}" \
+    tf="${tmpfile}" \
     t=$(mktemp) \
-    od=${outdir} \
-    r=${rate:=unlimited} \
-    c=${clients:=10} \
-    i=${isolation:=TRANSACTION_READ_COMMITED} \
-    s=${scale:=100}
+    od="${outdir}" \
+    r="${rate:=unlimited}" \
+    c="${clients:=10}" \
+    i="${isolation:=TRANSACTION_READ_COMMITED}" \
+    s="${scale:=100}"
 
 
 

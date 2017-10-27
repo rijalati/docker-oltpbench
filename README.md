@@ -114,4 +114,5 @@ sibench
 
 `ORACLEMVN_PASS` -- password for the above username, used to generate a maven encrypted password that is actually written to the settings.xml file. 
 
+`ACCEPT_OTN_BOOL` -- indicates that you accept the Oracle Technology Network License Agreement. Only accepts true or false.
 
