@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<parameters>
+    <dbtype>sqlserver</dbtype>
+    <driver>net.sourceforge.jtds.jdbc.Driver</driver>
+    <DBUrl>jdbc:jtds:sqlserver://|FQDN|:|PORT|;databaseName=|DB|</DBUrl>
+<DBName>|DB|</DBName>
