@@ -63,6 +63,7 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
              postgres
              db2
              oracle
+             rac
              sqlserver
              sqlite*
              hstore*
@@ -132,7 +133,7 @@ function genconf
     d="${database}" \
     u="${user}" \
     p="${pass}" \
-    ty="${dbtype}" \
+    ty="${dbtype//RAC/ORACLE}" \
     tf="${tmpfile}" \
     t=$(mktemp) \
     od="${outdir}" \
