@@ -5,3 +5,4 @@
   <driver>oracle.jdbc.OracleDriver</driver>
   <DBUrl>jdbc:oracle:thin:@//|FQDN|:|PORT|/|DB|</DBUrl>
  <!-- <DBName>|DB|</DBName> -->
+
