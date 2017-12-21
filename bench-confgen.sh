@@ -134,7 +134,7 @@ function genconf
     d="${database}" \
     u="${user}" \
     p="${pass}" \
-    ty="${dbtype//RAC/ORACLE}" \
+    ty="${dbtype}" \
     tf="${tmpfile}" \
     t=$(mktemp) \
     od="${outdir}" \
