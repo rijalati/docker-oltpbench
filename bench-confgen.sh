@@ -59,7 +59,7 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
 -t <dbtype> Type of database being targeted (those indicated with a '*' need
             config templates to be added):
              mysql
-	     mariadb
+             mariadb
              postgres
              db2
              oracle
@@ -205,7 +205,10 @@ function main
             ;;
         t )
             typeset -u dbtype="${OPTARG}" # upcase whatever the user passes
-            if [[ ${dbtype} == "ORACLE" ]]; then
+            if [[ ${dbtype} == "ORACLE" || ${dbtype} == "RAC" ]]; then
+                typeset -l ACCEPT_OTN_BOOL
+                [[ ${ACCEPT_OTN_BOOL} == "true" ]] \
+                    || { printf "You must set the 'ACCEPT_OTN_BOOL' variable to 'true'.\n" && exit 2; }
                 ./ojdbc-get.sh
                 mvn clean
                 mvn package -P fixerrors
