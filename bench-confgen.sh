@@ -91,6 +91,7 @@ ${ print "${BOLD}OPTIONS${NORM}"; }
            voter
            linkbench
            sibench
+-a <boolean> Accept Oracle OTN License (required for oracle & rac).
 
 -d <database> Name of DB.
 
@@ -193,10 +194,14 @@ function main
 
     (( $# == 0 )) && usage
 
-    while getopts f:u:p:t:d:r:c:s:i:n:b:o: OPT; do
+    while getopts f:a:u:p:t:d:r:c:s:i:n:b:o: OPT; do
         case "${OPT}" in
         f )
             fqdn="${OPTARG}"
+            ;;
+        a )
+            typeset -l ACCEPT_OTN_BOOL="${OPTARG}" # downcase this var
+            export ACCEPT_OTN_BOOL
             ;;
         u )
             user="${OPTARG}"
@@ -207,7 +212,6 @@ function main
         t )
             typeset -u dbtype="${OPTARG}" # upcase whatever the user passes
             if [[ ${dbtype} == "ORACLE" || ${dbtype} == "RAC" ]]; then
-                typeset -l ACCEPT_OTN_BOOL
                 [[ ${ACCEPT_OTN_BOOL} == "true" ]] \
                     || { printf "You must set the 'ACCEPT_OTN_BOOL' variable to 'true'.\n" && exit 2; }
                 ./ojdbc-get.sh
