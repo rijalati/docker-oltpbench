@@ -2,7 +2,7 @@
 
 set -vex
 
-eval target="/oltpbench/templates"
+export target="/oltpbench/templates"
 
 if [[ -z ${DBUSER} && -z ${DBPASS} && -z ${DBTYPE} && -z ${DBNAME} && -z ${DBPORT} ]]; then
     echo "Skipping config generation...\n"
