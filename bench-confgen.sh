@@ -146,7 +146,7 @@ function genconf
 
 
     if [[ -z ${od} ]]; then
-        : typeset o="my-templates/${f}.xml"
+        : typeset o="templates/${f}.xml"
     else
         : typeset o="${od}/${f}.xml"
     fi
