@@ -2,7 +2,7 @@
 
     <!-- Scale factor is the number of warehouses in TPCC -->
     <scalefactor bench="tpcc">|SCALE|</scalefactor>
-    <dialect>/oltpbench/config/dialects/tpcc-dialects.xml</dialect>
+    <!-- <dialect>/oltpbench/config/dialects/tpcc-dialects.xml</dialect>-->
     <!--ORACLE_CFG4-->
 
     <!-- TPCC specific -->
