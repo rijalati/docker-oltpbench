@@ -129,7 +129,7 @@ function fatal_error
 # Generate a config file with the user specified values
 function genconf
 {
-    eval typeset f="${fqdn}" \
+    : typeset f="${fqdn}" \
     pn="${port}" \
     d="${database}" \
     u="${user}" \
@@ -146,9 +146,9 @@ function genconf
 
 
     if [[ -z ${od} ]]; then
-        eval typeset o="my-templates/${f}.xml"
+        : typeset o="templates/${f}.xml"
     else
-        eval typeset o="${od}/${f}.xml"
+        : typeset o="${od}/${f}.xml"
     fi
 
     cat "config-templates/dbs/${ty}.xml" | sed "s/|FQDN|/${f}/; s/|PORT|/${pn}/; s/|DB|/${d}/" > ${t}
