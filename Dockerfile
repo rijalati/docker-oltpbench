@@ -5,7 +5,7 @@ RUN apk update --no-cache \
     && apk add git tar mksh && git clone https://github.com/rijalati/oltpbench.git
 WORKDIR /oltpbench
 RUN git checkout driver-bump
-COPY my-templates/ /oltpbench/templates/
+COPY templates/ /oltpbench/templates/
 COPY config-templates/ /oltpbench/config-templates/
 COPY start.sh /start.sh
 COPY bench-confgen.sh bench-confgen.sh
