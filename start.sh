@@ -3,7 +3,7 @@
 
 set -vex
 
-echo "${ENV}"
+echo $ENV
 
 export target="/oltpbench/templates"
 
@@ -18,6 +18,6 @@ export target="/oltpbench/templates"
                          --create "${CREATEBOOL:-true}" \
                          --execute "${EXECBOOL:-true}" \
                          --load "${LOADBOOL:-true}" \
-			 || sleep 300
+			 && { [[ "${DEBUG}" == true ]] && sleep; }
 
 exit $?
