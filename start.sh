@@ -2,6 +2,8 @@
 
 set -vex
 
+printf '%s\n' "${ENV}"
+
 export target="/oltpbench/templates"
 
 if [[ -z ${DBUSER} && -z ${DBPASS} && -z ${DBTYPE} && -z ${DBNAME} && -z ${DBPORT} ]]; then
