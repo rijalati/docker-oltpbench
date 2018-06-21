@@ -129,7 +129,7 @@ function fatal_error
 # Generate a config file with the user specified values
 function genconf
 {
-    : typeset f="${fqdn}" \
+    typeset -n f="${fqdn}" \
     pn="${port}" \
     d="${database}" \
     u="${user}" \
